@@ -61,7 +61,7 @@ const searchResults = [
   },
 ];
 
-const searchView = () => {
+const SearchView = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -73,48 +73,39 @@ const searchView = () => {
           keyExtractor={item => item.id}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity
-                onPress={() => {
-                  this.props.navigation.navigate('FlightDetails');
-                }}>
-                <View style={styles.flightResult}>
-                  <View style={styles.flightImage}>
-                    <Image
-                      source={{uri: item.image}}
-                      style={{width: 100, height: 50}}
-                    />
+              <View style={styles.flightResult}>
+                <View style={styles.flightImage}>
+                  <Image
+                    source={{uri: item.image}}
+                    style={{width: 100, height: 50}}
+                  />
+                </View>
+                <View style={styles.flightDetails}>
+                  <View style={styles.flightAirline}>
+                    <Text style={styles.flightAirlineText}>{item.airline}</Text>
                   </View>
-                  <View style={styles.flightDetails}>
-                    <View style={styles.flightAirline}>
-                      <Text style={styles.flightAirlineText}>
-                        {item.airline}
-                      </Text>
-                    </View>
-                    <View style={styles.flightNumber}>
-                      <Text style={styles.flightNumberText}>
-                        {item.flightNumber}
-                      </Text>
-                    </View>
-                    <View style={styles.flightTime}>
-                      <Text style={styles.flightTimeText}>
-                        {item.departure}
-                      </Text>
-                      <Text style={styles.flightTimeText}>
-                        {item.departureTime}
-                      </Text>
-                    </View>
-                    <View style={styles.flightTime}>
-                      <Text style={styles.flightTimeText}>{item.arrival}</Text>
-                      <Text style={styles.flightTimeText}>
-                        {item.arrivalTime}
-                      </Text>
-                    </View>
-                    <View style={styles.flightPrice}>
-                      <Text style={styles.flightPriceText}>{item.price}</Text>
-                    </View>
+                  <View style={styles.flightNumber}>
+                    <Text style={styles.flightNumberText}>
+                      {item.flightNumber}
+                    </Text>
+                  </View>
+                  <View style={styles.flightTime}>
+                    <Text style={styles.flightTimeText}>{item.departure}</Text>
+                    <Text style={styles.flightTimeText}>
+                      {item.departureTime}
+                    </Text>
+                  </View>
+                  <View style={styles.flightTime}>
+                    <Text style={styles.flightTimeText}>{item.arrival}</Text>
+                    <Text style={styles.flightTimeText}>
+                      {item.arrivalTime}
+                    </Text>
+                  </View>
+                  <View style={styles.flightPrice}>
+                    <Text style={styles.flightPriceText}>{item.price}</Text>
                   </View>
                 </View>
-              </TouchableOpacity>
+              </View>
             );
           }}
         />
@@ -178,4 +169,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default searchView;
+export default SearchView;
