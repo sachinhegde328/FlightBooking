@@ -14,7 +14,7 @@ import searchView from './FlightResults';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-const SearchHeader = ({navigation}) => {
+const SearchHeader = () => {
   const [showDate, setshowDate] = useState(false);
   const [SelectedDate, setDate] = useState(new Date());
 
@@ -73,16 +73,6 @@ const SearchHeader = ({navigation}) => {
         onSelectedChange={date => setDate2(date)}
       />
       <Counter />
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Search Flights"
-          style={styles.SearchButton}
-          onPress={() => {
-            //redirect to search results page
-            navigation.navigate('FlightResults');
-          }}
-        />
-      </View>
     </SafeAreaView>
   );
 };

@@ -21,7 +21,7 @@ const searchResults = [
     arrivalTime: '15:00',
     price: 'Rs. 1000',
     image:
-      'https://www.airindia.in/sites/default/files/styles/airline_logo_style/public/airline_logo/air-india-logo.png?itok=QZ-_jZ-_',
+      'https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Ffront-view-exactly-of-a-widebody-aircraft-sunset-at-the-airport-picture-id1270650301%3Fb%3D1%26k%3D20%26m%3D1270650301%26s%3D170667a%26w%3D0%26h%3DffzNiuHPSd9RZC1dOv_o3VOF3JXkrjq5orJgQhysSNI%3D&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Faeroplane&tbnid=nzgWHAuNxMNHaM&vet=12ahUKEwiFter7lJX0AhWzKbcAHWC-DK4QMygGegUIARDpAQ..i&docid=zUO50cMzwM52bM&w=509&h=339&q=aeroplane&ved=2ahUKEwiFter7lJX0AhWzKbcAHWC-DK4QMygGegUIARDpAQ',
   },
   {
     id: '2',
@@ -76,8 +76,10 @@ const SearchView = () => {
               <View style={styles.flightResult}>
                 <View style={styles.flightImage}>
                   <Image
-                    source={{uri: item.image}}
-                    style={{width: 100, height: 50}}
+                    source={{
+                      uri: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Ffront-view-exactly-of-a-widebody-aircraft-sunset-at-the-airport-picture-id1270650301%3Fb%3D1%26k%3D20%26m%3D1270650301%26s%3D170667a%26w%3D0%26h%3DffzNiuHPSd9RZC1dOv_o3VOF3JXkrjq5orJgQhysSNI%3D&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Faeroplane&tbnid=nzgWHAuNxMNHaM&vet=12ahUKEwiFter7lJX0AhWzKbcAHWC-DK4QMygGegUIARDpAQ..i&docid=zUO50cMzwM52bM&w=509&h=339&q=aeroplane&ved=2ahUKEwiFter7lJX0AhWzKbcAHWC-DK4QMygGegUIARDpAQ',
+                    }}
+                    style={{width: 100, height: 40}}
                   />
                 </View>
                 <View style={styles.flightDetails}>
@@ -116,8 +118,8 @@ const SearchView = () => {
 
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
     flex: 1,
-    backgroundColor: '#fff',
   },
   header: {
     height: 50,
@@ -133,12 +135,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   flightResult: {
+    flex: 1,
+    color: '#fff',
     flexDirection: 'row',
     padding: 10,
   },
-  flightImage: {
-    flex: 1,
-  },
+  flightImage: {},
   flightDetails: {
     flex: 3,
     paddingLeft: 5,

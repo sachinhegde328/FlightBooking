@@ -14,7 +14,7 @@ public class MainActivity extends ReactActivity {
     return "FlightBooking";
   }
   @Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-}
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
 }
